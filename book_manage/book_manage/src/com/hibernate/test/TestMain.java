@@ -1,3 +1,4 @@
+//登录界面
 package com.hibernate.test;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class TestMain {
 			} else {
 				count++;
 				System.out.println("密码错误!请重新输入！");
-				if (count == 3) {
+				if (count == 3) {		//三次密码输入错误结束程序
 					System.out.println();
 					System.out.println("三次密码错误，请联系管理员!");
 					break;

@@ -1,3 +1,4 @@
+//展示界面和读取用户操作
 package com.hibernate.service;
 
 import java.util.List;
@@ -21,27 +22,8 @@ public class Opera {
 
 		while (sc.hasNext()) {
 			int num = sc.nextInt();
-//			if(num == 1)
-//			{
-//				Service serv4 = new Service();
-//				List<Book> getL = serv4.getAll();
-//				// System.out.println(getL.size());
-//				if (getL.size() > 0) {
-//					System.out.println("已有图书信息如下：");
-//					for (Book book : getL) {
-//						System.out.println("ID:" + book.getId());
-//						System.out.println("书名:" + book.getName());
-//						System.out.println("价格:" + book.getPrice());
-//						System.out.println("出版社:" + book.getPress());
-//						System.out.println("作者:" + book.getAuthor());
-//						System.out.println();
-//					}
-//				} else {
-//					System.out.println("不存在图书信息!");
-//				}
-//			}
 			switch (num) {
-			case 1:
+			case 1:		//展示图书信息
 				Service serv4 = new Service();
 				List<Book> getL = serv4.getAll();
 				// System.out.println(getL.size());
@@ -59,7 +41,7 @@ public class Opera {
 					System.out.println("不存在图书信息!");
 				}
 				break;
-			case 2:
+			case 2:		//添加图书信息
 				System.out.println(" --------");
 				System.out.println("|添加图书信息|");
 				System.out.println(" --------");
@@ -83,7 +65,7 @@ public class Opera {
 				System.out.println();
 				break;
 
-			case 3:
+			case 3:		//删除图书信息
 				System.out.println(" --------");
 				System.out.println("|删除图书信息|");
 				System.out.println(" --------");
@@ -98,7 +80,7 @@ public class Opera {
 				System.out.println();
 				break;
 
-			case 4:
+			case 4:		//修改图书信息
 				System.out.println(" --------");
 				System.out.println("|修改图书信息|");
 				System.out.println(" --------");
@@ -121,7 +103,7 @@ public class Opera {
 				System.out.println();
 				break;
 
-			case 5:
+			case 5:		//查看图书信息
 				System.out.println(" ---------");
 				System.out.println("|查看图书信息|");
 				System.out.println(" ---------");
@@ -167,7 +149,7 @@ public class Opera {
 					System.out.println();
 				}
 				break;
-			case 6:
+			case 6:		//结束运行
 				System.out.println("辣鸡图书管理系统结束运行，感谢使用!");
 				System.exit(0);
 				break;

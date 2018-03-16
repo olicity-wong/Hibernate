@@ -1,3 +1,4 @@
+//被调用的方法
 package com.hibernate.service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import com.hibernate.util.HibernateSessionFactory;
 public class Service {
 	private Session se;
 
-	public void show()
+	public void show()		//展示图书信息
 	{
 		Service serv100 = new Service();
 		List<Book> getL = serv100.getAll();
@@ -32,14 +33,15 @@ public class Service {
 			System.out.println("不存在图书信息!");
 		}
 	}
-	public List<Book> getAll() {
+	
+	public List<Book> getAll() {		//从数据库中查询全部图书信息
 		se = HibernateSessionFactory.getSession();
 		Query q = se.createQuery("from Book");
 		List<Book> l = q.list();
 		return l;
 	}
 
-	public boolean add(Book b) {
+	public boolean add(Book b) {		//添加图书信息
 		se = HibernateSessionFactory.getSession();
 		Transaction tc = se.beginTransaction();
 		Integer id = (Integer) se.save(b);
@@ -59,7 +61,7 @@ public class Service {
 		}
 	}
 
-	public boolean delete(int id) {
+	public boolean delete(int id) {		//删除图书信息
 		se = HibernateSessionFactory.getSession();
 		Book b = (Book) se.get(Book.class, id);
 		boolean c = true;
@@ -83,7 +85,7 @@ public class Service {
 	
 	
 	public boolean change(int id, String name, float price,
-	    String press, String author) {
+	    String press, String author) {		//修改图书信息
 		se = HibernateSessionFactory.getSession();
 		Book b = (Book) se.get(Book.class, id);
 		System.out.println();
@@ -117,7 +119,7 @@ public class Service {
 		return c;
 	}
 
-	public List<Book> find(String key) {
+	public List<Book> find(String key) {		//通过关键词模糊查询图书信息
 		se = HibernateSessionFactory.getSession();
 		Query q = se.createQuery("from Book b where b.name like '%" + key
 				+ "%' or b.price like '%" + key
@@ -127,7 +129,7 @@ public class Service {
 		List<Book> l = q.list();
 		return l;
 		}
-	public List<Book> find_1(String key1,String key2)
+	public List<Book> find_1(String key1,String key2)		//通过图书名和作者关键字查询图书信息
 		{
 			se=HibernateSessionFactory.getSession();
 			Query q=se.createQuery("from Book book where book.name like '%"+key1+"%'and book.author like '%"+key2+"%' ");

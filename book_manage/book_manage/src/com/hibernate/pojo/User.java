@@ -1,12 +1,10 @@
+//用户信息
 package com.hibernate.pojo;
 
 public class User {
-	int id;
-	public String username;
-	String userpass;
-	
-	
-	
+	int id;						//用户id
+	public String username;		//用户名
+	String userpass;			//用户密码
 	public int getId() {
 		return id;
 	}
