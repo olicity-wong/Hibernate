@@ -1,2 +1,3 @@
-# Hibernate
+﻿# Hibernate
 一个简易的图书管理系统（hibernate）
+主要通过HibernateSessionFactory创建session，并创建Query对象执行hql语句进行相关操作。
